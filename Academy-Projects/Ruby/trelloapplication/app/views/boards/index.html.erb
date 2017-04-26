@@ -1,0 +1,20 @@
+<div class = "header"> 
+<img src="../assets/images/header-logo-2x.png" alt="Logo">
+</a>
+</div>
+ <tr><td><%= link_to 'New Board', new_board_path %></td><tr>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @boards.each do |board| %>
+    <tr>
+      <td><%= board.title %></td>
+      <td><%= board.description %></td>
+      <td><%= link_to 'Show', board_path(board) %></td>
+      <td><%= link_to 'Edit', edit_board_path(board) %></td>
+    </tr>
+  <% end %>
+</table>
